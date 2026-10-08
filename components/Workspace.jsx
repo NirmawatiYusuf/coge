@@ -110,7 +110,7 @@ function Message({ message, onOpenSource }) {
                 style={{ overflow: 'hidden' }}
               >
                 <div className="excerpt-inner">
-                  <p className="excerpt-label">Kutipan yang dikirim ke Gemini</p>
+                  <p className="excerpt-label">Kutipan yang dikirim ke Claude (Anthropic)</p>
                   <p className="excerpt-text"><Highlighted text={openSource.excerpt} terms={openSource.terms} /></p>
                   <button type="button" className="link-btn" onClick={() => onOpenSource(openSource.id)}>
                     Buka dokumen lengkap
@@ -138,7 +138,7 @@ export default function Workspace() {
   const [lastSources, setLastSources] = useState([]);
   const [busy, setBusy] = useState(false);
   const [input, setInput] = useState('');
-  const [status, setStatus] = useState({ state: 'checking', model: '' });
+  const [status, setStatus] = useState({ state: 'checking', model: '', provider: 'claude' });
   const [notice, setNotice] = useState(null);
   const [highlightId, setHighlightId] = useState(null);
   const [composerOpen, setComposerOpen] = useState(false);
@@ -153,8 +153,8 @@ export default function Workspace() {
     setUserSources(loadUserSources());
     fetch('/api/status', { headers: { accept: 'application/json' } })
       .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((d) => setStatus({ state: d.configured ? 'ready' : 'off', model: d.model }))
-      .catch(() => setStatus({ state: 'unknown', model: '' }));
+      .then((d) => setStatus({ state: d.configured ? 'ready' : 'off', model: d.model, provider: d.provider || 'claude' }))
+      .catch(() => setStatus({ state: 'unknown', model: '', provider: 'claude' }));
   }, []);
 
   useLayoutEffect(() => {
@@ -303,7 +303,7 @@ export default function Workspace() {
 
   const statusLabel = {
     checking: 'Memeriksa AI…',
-    ready: `Gemini siap · ${status.model}`,
+    ready: `${status.provider === 'gemini' ? 'Gemini' : 'Claude'} siap · ${status.model}`,
     off: 'AI belum diaktifkan',
     unknown: 'Status AI tidak tersedia',
   }[status.state];

@@ -60,9 +60,10 @@ export default function Footer() {
             <h3 className="footer-col-title">Navigasi</h3>
             <ul className="footer-links">
               <li><a href="#cara-kerja">Cara Kerja</a></li>
+              <li><a href="#evaluasi">Evaluasi Akurasi Claude</a></li>
+              <li><a href="#traksi">Traksi Private Pilot</a></li>
               <li><a href="#data">Alur & Privasi Data</a></li>
               <li><a href="#keunggulan">Keunggulan Platform</a></li>
-              <li><a href="#ruang-kerja">Demo Interaktif</a></li>
               <li><a href="#faq">Pertanyaan Umum (FAQ)</a></li>
             </ul>
           </div>

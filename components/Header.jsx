@@ -24,7 +24,8 @@ export default function Header() {
         </a>
         <nav className="nav" aria-label="Navigasi utama">
           <a href="#cara-kerja">Cara kerja</a>
-          <a href="#data">Alur data</a>
+          <a href="#evaluasi">Evaluasi Claude</a>
+          <a href="#traksi">Traksi Pilot</a>
           <a href="#keunggulan">Keunggulan</a>
           <a href="#faq">FAQ</a>
         </nav>

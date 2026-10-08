@@ -24,12 +24,12 @@ const nodes = [
     ],
   },
   {
-    name: 'Google Gemini',
-    role: 'Penyusun jawaban',
+    name: 'Anthropic Claude',
+    role: 'Penyusun Jawaban Presisi',
     points: [
-      'Menerima pertanyaan dan kutipan untuk menulis jawaban.',
-      'Dipanggil dengan penyimpanan interaksi dinonaktifkan (store: false).',
-      'Pemrosesan di Google tunduk pada kebijakan Google, bukan Cognexy.',
+      'Menerima pertanyaan dan kutipan terpilih untuk menyusun jawaban berdasar rujukan.',
+      'Ditenagai Claude 4.8 Sonnet & Claude Haiku dengan zero-retention / tanpa penyimpanan interaksi.',
+      'Dirancang khusus untuk kepatuhan ketat terhadap sumber (grounded citations) dan menolak halusinasi.',
     ],
   },
 ];

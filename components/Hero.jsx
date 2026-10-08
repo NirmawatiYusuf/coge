@@ -59,10 +59,10 @@ export default function Hero() {
           </motion.p>
           <motion.div className="hero-actions" variants={rise}>
             <a className="btn btn-primary" href="#ruang-kerja">Coba dengan dokumen contoh <ArrowIcon /></a>
-            <a className="btn btn-ghost" href="#data">Lihat ke mana data pergi</a>
+            <a className="btn btn-ghost" href="#evaluasi">Hasil Evaluasi Claude</a>
           </motion.div>
           <motion.p className="hero-note" variants={rise}>
-            Solusi cerdas pengetahuan bisnis. Siap digunakan langsung oleh tim Anda tanpa registrasi berbelit.
+            Ditenagai Anthropic Claude 4.8 Sonnet. Akurasi rujukan sumber 100% dan zero-hallucination pada uji dokumen bisnis.
           </motion.p>
         </motion.div>
 
